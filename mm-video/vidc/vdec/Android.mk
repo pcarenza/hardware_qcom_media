@@ -72,12 +72,17 @@ libmm-vdec-inc          += hardware/qcom/media/mm-core/inc
 libmm-vdec-inc          += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 #DRM include - Interface which loads the DRM library
 libmm-vdec-inc	        += $(OMX_VIDEO_PATH)/DivxDrmDecrypt/inc
+<<<<<<< HEAD
 libmm-vdec-inc          += hardware/qcom/$(DISPLAY)/libgralloc
+=======
+libmm-vdec-inc          += hardware/qcom/display/libgralloc
+>>>>>>> 689b476ba3eb46c34b81343295fe144a0e81a18e
 libmm-vdec-inc          += frameworks/native/include/media/openmax
 libmm-vdec-inc          += frameworks/native/include/media/hardware
 libmm-vdec-inc          += hardware/qcom/media/libc2dcolorconvert
 libmm-vdec-inc          += hardware/qcom/$(DISPLAY)/libcopybit
 libmm-vdec-inc          += frameworks/av/include/media/stagefright
+<<<<<<< HEAD
 libmm-vdec-inc          += hardware/qcom/$(DISPLAY)/libqservice
 libmm-vdec-inc          += frameworks/av/media/libmediaplayerservice
 libmm-vdec-inc          += frameworks/native/include/binder
@@ -85,6 +90,10 @@ ifeq ($(DISPLAY),display-caf)
 libmm-vdec-inc          += hardware/qcom/$(DISPLAY)/libqdutils
 endif
 
+=======
+libmm-vdec-inc          += hardware/qcom/display/libqservice
+libmm-vdec-inc          += hardware/qcom/display/libqdutils
+>>>>>>> 689b476ba3eb46c34b81343295fe144a0e81a18e
 
 LOCAL_MODULE                    := libOmxVdec
 LOCAL_MODULE_TAGS               := optional
@@ -96,9 +105,13 @@ LOCAL_SHARED_LIBRARIES  := liblog libutils libbinder libcutils libdl
 
 LOCAL_SHARED_LIBRARIES  += libdivxdrmdecrypt
 LOCAL_SHARED_LIBRARIES += libqservice
+<<<<<<< HEAD
 ifeq ($(DISPLAY),display-caf)
 LOCAL_SHARED_LIBRARIES  += libqdMetaData
 endif
+=======
+LOCAL_SHARED_LIBRARIES += libqdMetaData
+>>>>>>> 689b476ba3eb46c34b81343295fe144a0e81a18e
 
 LOCAL_SRC_FILES         := src/frameparser.cpp
 LOCAL_SRC_FILES         += src/h264_utils.cpp
@@ -127,7 +140,11 @@ LOCAL_CFLAGS                    := $(libOmxVdec-def)
 LOCAL_C_INCLUDES                := $(mm-vdec-test-inc)
 
 LOCAL_PRELINK_MODULE      := false
+<<<<<<< HEAD
 LOCAL_SHARED_LIBRARIES    := libutils libOmxCore libOmxVdec libbinder libcutils
+=======
+LOCAL_SHARED_LIBRARIES    := libutils liblog libOmxCore libOmxVdec libbinder
+>>>>>>> 689b476ba3eb46c34b81343295fe144a0e81a18e
 
 LOCAL_SRC_FILES           := src/queue.c
 LOCAL_SRC_FILES           += test/omx_vdec_test.cpp
